@@ -5,13 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 //imporitng the router functionality after installing it
 import {BrowserRouter} from 'react-router-dom';
-import {provider} from 'react-redux';
- ReactDOM.render(
-   <provider>
-  <BrowserRouter>
+//as a part of redux integration - include provider
+import {Provider} from 'react-redux';
+//import the store
+import store from './redux/store'
+
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
    <App /> 
   </BrowserRouter>
-  </provider>,
+  </Provider>,
   document.getElementById('root')
 );
 
